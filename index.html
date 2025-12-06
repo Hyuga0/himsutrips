@@ -37,34 +37,22 @@
             background-position: center;
             background-attachment: fixed;
         }
-        .placeholder-image {
-            background-color: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: #94a3b8;
-            font-weight: 600;
-            transition: all 0.3s ease;
-        }
-        .placeholder-image:hover {
-            background-color: #cbd5e1;
-        }
     </style>
 </head>
 <body class="font-sans text-gray-800 bg-gray-50">
 
-    <!-- Navbar -->
     <nav class="fixed w-full z-50 transition-all duration-300 glass-effect shadow-sm">
-        <div class="container mx-auto px-6 py-3 flex justify-between items-center">
+        <div class="container mx-auto px-6 py-3 flex justify-between items-center relative">
+            
             <div class="flex items-center gap-3">
-                <!-- Small Logo Placeholder for Nav -->
-                <div class="w-10 h-10 rounded-full bg-white-300 flex items-center justify-center text-xs font-bold text-gray-500">
-                    TRIP
+                <div class="w-10 h-10 rounded-full bg-gray-100 flex items-center justify-center text-xs font-bold text-gray-500 overflow-hidden">
+                    <img src="Himsu Logo/Himsu Logo.png" alt="Logo" class="w-full h-full object-cover">
                 </div>
                 <a href="#" class="text-xl md:text-2xl font-bold text-himsu-dark tracking-tighter">
                     HIMSU <span class="text-himsu-primary">GOA '26</span>
                 </a>
             </div>
+
             <div class="hidden md:flex space-x-6 font-medium text-sm items-center">
                 <a href="#itinerary" class="hover:text-himsu-primary transition">ITINERARY</a>
                 <a href="#attractions" class="hover:text-himsu-primary transition">ATTRACTIONS</a>
@@ -72,14 +60,21 @@
                 <a href="#inclusions" class="hover:text-himsu-primary transition">INCLUSIONS</a>
                 <a href="#" class="booking-trigger px-5 py-2 bg-himsu-primary text-white rounded-full hover:bg-red-500 transition shadow-lg transform hover:-translate-y-0.5">BOOK NOW</a>
             </div>
-            <!-- Mobile Menu Button -->
-            <button class="md:hidden text-2xl text-himsu-dark">
+
+            <button id="mobile-menu-btn" class="md:hidden text-2xl text-himsu-dark focus:outline-none">
                 <i class="fa-solid fa-bars"></i>
             </button>
         </div>
+
+        <div id="mobile-menu" class="hidden md:hidden bg-white border-t border-gray-100 shadow-lg absolute top-full left-0 w-full flex flex-col items-center py-6 space-y-6 font-medium text-gray-700 transition-all duration-300">
+            <a href="#itinerary" class="mobile-link hover:text-himsu-primary">ITINERARY</a>
+            <a href="#attractions" class="mobile-link hover:text-himsu-primary">ATTRACTIONS</a>
+            <a href="#resort" class="mobile-link hover:text-himsu-primary">RESORT</a>
+            <a href="#inclusions" class="mobile-link hover:text-himsu-primary">INCLUSIONS</a>
+            <a href="#" class="booking-trigger mobile-link px-8 py-3 bg-himsu-primary text-white rounded-full hover:bg-red-500 shadow-md">BOOK NOW</a>
+        </div>
     </nav>
 
-    <!-- Hero Section -->
     <header class="hero-pattern min-h-screen flex flex-col items-center justify-center text-center px-4 relative pt-20">
         <div class="text-white max-w-4xl z-10 animate-fade-in-up flex flex-col items-center">
             
@@ -118,7 +113,6 @@
         </div>
     </header>
 
-    <!-- Itinerary Section -->
     <section id="itinerary" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6 max-w-5xl">
             <div class="text-center mb-16">
@@ -129,8 +123,6 @@
             </div>
 
             <div class="space-y-8">
-                
-                <!-- Day 1 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-himsu-primary hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -140,14 +132,12 @@
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Assemble at Chandigarh Railway Station (Morning)</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Departure from Chandigarh to Goa</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Enjoy the full-day & overnight train journey</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Relax, enjoy the scenic route & group fun on the way</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-train text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 2 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-himsu-secondary hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -157,15 +147,12 @@
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Arrive in Goa by Evening</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Free pickup from railway station</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Check-in at the resort, relax & refresh</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Visit a nearby beach for a calm evening walk</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Overnight stay at the resort</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-plane-arrival text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 3 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-gray-800 hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -174,14 +161,12 @@
                             <ul class="mt-2 space-y-1 text-gray-600 text-sm">
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Free day to explore beaches, markets & cafés</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Enjoy resort amenities & poolside fun</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Overnight stay at the resort</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-umbrella-beach text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 4 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-yellow-500 hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -190,14 +175,12 @@
                             <ul class="mt-2 space-y-1 text-gray-600 text-sm">
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Full day free for personal activities</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Beach time, relaxation, photos & fun</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Overnight stay at the resort</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-water text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 5 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-purple-500 hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -206,14 +189,12 @@
                             <ul class="mt-2 space-y-1 text-gray-600 text-sm">
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Explore new beaches or enjoy the resort</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Try water sports or shop around</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Overnight stay at the resort</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-camera text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 6 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-himsu-secondary hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -222,14 +203,12 @@
                             <ul class="mt-2 space-y-1 text-gray-600 text-sm">
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Check-out from the resort</li>
                                 <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Departure for Chandigarh at Night</li>
-                                <li><i class="fa-solid fa-circle text-[6px] mr-2 align-middle"></i> Enjoy overnight train journey back home</li>
                             </ul>
                         </div>
                         <i class="fa-solid fa-moon text-4xl text-gray-200"></i>
                     </div>
                 </div>
 
-                <!-- Day 7 -->
                 <div class="bg-white rounded-2xl p-6 md:p-8 shadow-sm border-l-8 border-himsu-primary hover:shadow-md transition">
                     <div class="flex flex-col md:flex-row md:items-center justify-between gap-4">
                         <div>
@@ -247,7 +226,6 @@
         </div>
     </section>
 
-    <!-- Goa Attractions -->
     <section id="attractions" class="py-20 bg-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-16">
@@ -257,7 +235,6 @@
             </div>
 
             <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <!-- North Goa -->
                 <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition duration-300">
                     <div class="w-12 h-12 bg-blue-100 rounded-full flex items-center justify-center text-blue-600 mb-4 text-xl">
                         <i class="fa-solid fa-compass"></i>
@@ -268,12 +245,9 @@
                         <li><strong>Calangute Beach</strong> – Most popular & lively</li>
                         <li><strong>Candolim Beach</strong> – Peaceful, clean, sunset walks</li>
                         <li><strong>Anjuna Beach</strong> – Flea market, cafés, party vibe</li>
-                        <li><strong>Morjim Beach</strong> – Peaceful, sea turtles & clean sands</li>
-                        <li><strong>Vagator Beach</strong> – Cliff views & iconic landscapes</li>
                     </ul>
                 </div>
 
-                <!-- South Goa -->
                 <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition duration-300">
                     <div class="w-12 h-12 bg-green-100 rounded-full flex items-center justify-center text-green-600 mb-4 text-xl">
                         <i class="fa-solid fa-leaf"></i>
@@ -283,12 +257,9 @@
                         <li><strong>Colva Beach</strong> – Long white sand stretch</li>
                         <li><strong>Palolem Beach</strong> – Photography & calm waters</li>
                         <li><strong>Agonda Beach</strong> – Quiet, beautiful & relaxing</li>
-                        <li><strong>Benaulim Beach</strong> – Clean and serene</li>
-                        <li><strong>Butterfly Beach</strong> – Hidden paradise</li>
                     </ul>
                 </div>
 
-                <!-- Nightlife -->
                 <div class="bg-gray-50 rounded-2xl p-6 hover:shadow-xl transition duration-300">
                     <div class="w-12 h-12 bg-purple-100 rounded-full flex items-center justify-center text-purple-600 mb-4 text-xl">
                         <i class="fa-solid fa-wine-glass"></i>
@@ -298,14 +269,12 @@
                         <li>Beach clubs & live music</li>
                         <li>Night markets</li>
                         <li>Beach shacks & candlelight dinners</li>
-                        <li>Dance floors, parties & coastal vibes</li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Resort Section -->
     <section id="resort" class="py-20 bg-gray-50">
         <div class="container mx-auto px-6">
             <div class="mb-12">
@@ -315,7 +284,6 @@
             </div>
 
             <div class="flex flex-col lg:flex-row gap-12">
-                <!-- Resort Details -->
                 <div class="lg:w-1/3 order-2 lg:order-1">
                     <div class="bg-white p-6 rounded-2xl shadow-sm">
                         <h3 class="text-xl font-bold mb-6">Resort Amenities</h3>
@@ -360,10 +328,8 @@
                     </div>
                 </div>
 
-                <!-- 14 Image Placeholders Grid -->
                 <div class="lg:w-2/3 order-1 lg:order-2">
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-4 h-full">
-                        <!-- 14 Placeholders as requested -->
                         <img src="1.WEBP" alt="Resort Photo" class="w-full h-40 object-cover rounded-xl shadow-sm border border-gray-100">
                         <img src="2.WEBP" alt="Resort Photo" class="w-full h-40 object-cover rounded-xl shadow-sm border border-gray-100">
                         <img src="3.WEBP" alt="Resort Photo" class="w-full h-40 object-cover rounded-xl shadow-sm border border-gray-100">
@@ -384,11 +350,9 @@
         </div>
     </section>
 
-    <!-- Inclusions & Exclusions -->
     <section id="inclusions" class="py-20 bg-white">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
-                <!-- Included -->
                 <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-t-8 border-blue-500 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-blue-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">PACKAGE</div>
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">🟦 Inclusions in the package</h3>
@@ -425,7 +389,6 @@
                     <p class="mt-6 text-xs text-gray-400 italic">*Customisation available at extra cost</p>
                 </div>
 
-                <!-- Excluded -->
                 <div class="bg-gray-50 p-8 rounded-3xl shadow-lg border-t-8 border-red-500 relative overflow-hidden">
                     <div class="absolute top-0 right-0 bg-red-500 text-white text-xs font-bold px-3 py-1 rounded-bl-lg">EXTRA</div>
                     <h3 class="text-2xl font-bold mb-6 text-gray-800">🟥 Extra Expenses (Not Included)</h3>
@@ -448,7 +411,6 @@
         </div>
     </section>
 
-    <!-- Important Rules -->
     <section class="py-16 bg-himsu-dark text-white">
         <div class="container mx-auto px-6">
             <div class="text-center mb-10">
@@ -488,15 +450,14 @@
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="bg-gray-900 text-white py-16">
         <div class="container mx-auto px-6 text-center">
             <h2 class="text-3xl font-bold mb-4">Ready for Goa?</h2>
             <p class="text-gray-400 mb-8 max-w-lg mx-auto">Seats are limited and filling fast. Don't miss out on the most awaited trip of the year with the HIMSU family.</p>
             
             <button class="booking-trigger bg-himsu-primary hover:bg-red-500 text-white font-bold py-4 px-10 rounded-full shadow-lg transition transform hover:scale-105 mb-10 text-xl">
-    Call to Book Now
-</button>
+                Call to Book Now
+            </button>
 
             <div class="border-t border-gray-800 pt-8 mt-8">
                 <p class="text-gray-500 text-sm">Organized by HIMSU (Himachal Students Union)</p>
@@ -528,7 +489,7 @@
 
     <script>
         // Smooth scroll for anchor links
-        document.querySelectorAll('a[href^="#"]:not(.booking-trigger)').forEach(anchor => {
+        document.querySelectorAll('a[href^="#"]:not(.booking-trigger):not(.mobile-link)').forEach(anchor => {
             anchor.addEventListener('click', function (e) {
                 e.preventDefault();
                 document.querySelector(this.getAttribute('href')).scrollIntoView({
@@ -537,7 +498,32 @@
             });
         });
 
-        // Popup Logic
+        // Mobile Menu Logic
+        const menuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const mobileLinks = document.querySelectorAll('.mobile-link');
+
+        // Toggle Menu
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Close menu when a link is clicked
+        mobileLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenu.classList.add('hidden');
+                // If it's a smooth scroll link, scroll to it manually since we prevented default
+                const href = link.getAttribute('href');
+                if(href.startsWith('#') && href.length > 1) {
+                    const targetSection = document.querySelector(href);
+                    if(targetSection) {
+                        targetSection.scrollIntoView({behavior: 'smooth'});
+                    }
+                }
+            });
+        });
+
+        // Booking Popup Logic
         const modal = document.getElementById('bookingModal');
         const triggers = document.querySelectorAll('.booking-trigger');
         const closeBtn = document.getElementById('closeModal');
@@ -546,7 +532,6 @@
         function openModal(e) {
             e.preventDefault();
             modal.classList.remove('hidden');
-            // Small delay to allow display:flex to apply before changing opacity
             setTimeout(() => {
                 modal.classList.remove('opacity-0');
                 modalContent.classList.remove('scale-95');
@@ -560,14 +545,12 @@
             modalContent.classList.add('scale-95');
             setTimeout(() => {
                 modal.classList.add('hidden');
-            }, 300); // Wait for transition to finish
+            }, 300);
         }
 
-        // Add event listeners
         triggers.forEach(btn => btn.addEventListener('click', openModal));
         closeBtn.addEventListener('click', closeModal);
 
-        // Close when clicking outside the box
         modal.addEventListener('click', (e) => {
             if (e.target === modal) {
                 closeModal();
